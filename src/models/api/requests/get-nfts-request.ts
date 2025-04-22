@@ -4,7 +4,7 @@
 export interface GetNftsRequest {
     nftMintAddress?: string;
     status?: string;
-    paginationSize?: number;
+    paginationSize?: string;
     lastEvaluatedKey?: string;
     nftOwnerAddress?: string;
 };

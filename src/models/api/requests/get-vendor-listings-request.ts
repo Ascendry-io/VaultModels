@@ -4,6 +4,6 @@
 export interface GetVendorListingsRequest {
     vendorAddress: string;
     status?: string;
-    paginationSize?: number;
+    paginationSize?: string;
     lastEvaluatedKey?: string;
 };

@@ -4,6 +4,6 @@
 export interface GetLoansRequest {
     nftMintAddress?: string;
     isActive?: boolean;
-    paginationSize?: number;
+    paginationSize?: string;
     lastEvaluatedKey?: string;
 };
