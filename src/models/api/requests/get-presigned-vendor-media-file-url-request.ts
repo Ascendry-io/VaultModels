@@ -3,6 +3,6 @@
  */
 export interface GetPresignedVendorMediaFileUrlRequest {
     fileName: string;
-    fileSize: number;
+    fileType: string;
     vendorAddress: string;
 };
