@@ -1,3 +1,6 @@
+/**
+ * Represents a get NFTs request object.
+ */
 export interface GetNftsRequest {
     nftMintAddress?: string;
     status?: string;

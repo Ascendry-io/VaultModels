@@ -1,3 +1,6 @@
+/**
+ * Represents a loan info object.
+ */
 export interface LoanInfo {
     nftOwnerAddress: string;
     startTime: number;

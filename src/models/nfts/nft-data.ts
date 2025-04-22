@@ -1,6 +1,9 @@
 import { NftAttribute } from "./nft-attribute";
 import { NftMediaFile } from "./nft-media-file";
 
+/**
+ * Represents a NFT data object.
+ */
 export interface NFTData {
     nftOwnerAddress: string;
     symbol: string;

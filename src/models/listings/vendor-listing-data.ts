@@ -1,5 +1,8 @@
 import { VendorListingAttribute } from "./vendor-listing-attribute";
 
+/**
+ * Represents a vendor listing data object.
+ */
 export interface VendorListingData {
     itemName: string;
     description: string;
