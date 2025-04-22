@@ -1,0 +1,19 @@
+{
+  "name": "vaultmodels",
+  "version": "1.0.0",
+  "description": "Shared TypeScript models for my RWA app",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepare": "npm run clean && npm run build"
+  },
+  "keywords": ["typescript", "models", "shared", "rwa"],
+  "author": "Your Name",
+  "license": "MIT",
+  "files": ["dist"],
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
