@@ -5,5 +5,5 @@ import { CompleteVendorListing } from "../../listings/complete-vendor-listing";
  */
 export interface GetVendorListingsResponse {
     listings: CompleteVendorListing[];
-    lastEvaluatedKey: string | null;
+    lastEvaluatedKey?: string;
 };

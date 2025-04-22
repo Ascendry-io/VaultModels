@@ -6,7 +6,6 @@ export interface NFTData {
     symbol: string;
     certificate: string;
     status: string;
-    countryOfOrigin: string;
     attributes: NftAttribute[];
     authenticationDate: string;
     name: string;
