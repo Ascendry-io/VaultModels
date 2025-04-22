@@ -1,6 +1,6 @@
-import { LoanInfo } from "../../loans/loan-info";
+import { NFTData } from "../../nfts";
 
 export interface GetNftsResponse {
-    nfts: LoanInfo[];
+    nfts: NFTData[];
     lastEvaluatedKey?: string;
 };
