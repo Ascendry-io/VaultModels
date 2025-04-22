@@ -1,5 +1,5 @@
-import { NftAttribute } from "./nftAttribute";
-import { NftMediaFile } from "./nftMediaFile";
+import { NftAttribute } from "./nft-attribute";
+import { NftMediaFile } from "./nft-media-file";
 
 export interface NFTData {
     nftOwnerAddress: string;
