@@ -1,5 +1,5 @@
 /**
- * Represents a get presigned vendor media file url response object.
+ * Represents a response from the get presigned vendor media file url API.
  */
 export interface GetPresignedVendorMediaFileUrlResponse {
     presignedUrl: string;

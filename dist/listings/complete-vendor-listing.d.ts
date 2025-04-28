@@ -8,4 +8,5 @@ export interface CompleteVendorListing extends VendorListingData {
     createdAtTimestamp: number;
     status: ListingStatus;
     memoTransactionSignature: string;
+    nftMint?: string;
 }

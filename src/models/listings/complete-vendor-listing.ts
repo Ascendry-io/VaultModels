@@ -9,4 +9,5 @@ export interface CompleteVendorListing extends VendorListingData {
     createdAtTimestamp: number;
     status: ListingStatus;
     memoTransactionSignature: string;
+    nftMint?: string; // Only populates for listings with a ListingStatus of "MINTED"
 };
