@@ -13,4 +13,7 @@ export interface VendorListingData {
     vendorAddress: string;
     tags: string[];
     ownerAddress: string;
+    ownerFirstName: string;
+    ownerLastName: string;
+    ownerEmail: string;
 }
