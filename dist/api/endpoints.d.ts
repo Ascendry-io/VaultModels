@@ -14,9 +14,6 @@ export declare const ENDPOINTS: {
     GET_VENDOR_LISTING_BY_LISTING_ID(listingId: string): string;
     CANCEL_LISTING(listingId: string): string;
     TRANSACTIONS: {
-        STAKE_NFT_FOR_LOAN: string;
-        CANCEL_LOAN_REQUEST: string;
-        PROVIDE_LOAN_LIQUIDITY: string;
-        REPAY_LOAN: string;
+        GENERATE_UNSIGNED_LOAN_TRANSACTION: string;
     };
 };

@@ -1,5 +1,5 @@
-import { GetPresignedVendorMediaFileUrlRequest, UploadVendorListingRequest, CancelVendorListingRequest } from "./requests";
-import { GetVendorInfoResponse, GetNftsResponse, GetLoansResponse, GetVendorListingsResponse, GetPresignedVendorMediaFileUrlResponse, UploadVendorListingResponse, GetVendorListingByIdResponse, CancelVendorListingResponse, GetPresignedUrlForViewingResponse } from "./responses";
+import { GetPresignedVendorMediaFileUrlRequest, UploadVendorListingRequest, CancelVendorListingRequest, LoanInstructionRequest } from "./requests";
+import { GetVendorInfoResponse, GetNftsResponse, GetLoansResponse, GetVendorListingsResponse, GetPresignedVendorMediaFileUrlResponse, UploadVendorListingResponse, GetVendorListingByIdResponse, CancelVendorListingResponse, GetPresignedUrlForViewingResponse, LoanTransactionResponse } from "./responses";
 /**
  * This class is used to interact with the vault API.
  */
@@ -63,39 +63,18 @@ export declare class AscendryClient {
      * @returns The vendor listings.
      */
     getVendorListings(vendorAddress: string): Promise<GetVendorListingsResponse>;
+    /**
+     * Gets the vendor listing by listing ID.
+     * @param listingId - The ID of the listing to get.
+     * @returns The vendor listing.
+     */
     getVendorListingById(listingId: string): Promise<GetVendorListingByIdResponse>;
     /**
-     * Stakes an NFT for a loan.
-     * @param nftMintAddress - The mint address of the NFT to stake.
-     * @param loanAmountInSOL - The amount of SOL to loan.
-     * @param loanInterestInSOL - The interest rate for the loan.
-     * @param loanDurationInSeconds - The duration of the loan in seconds.
-     * @param nftOwnerAddress - The owner address of the NFT to stake.
-     * @returns The signature of the transaction.
+     * Generates an unsigned loan transaction.
+     * @param loanInstructionRequest - The loan instruction request.
+     * @returns The unsigned loan transaction.
      */
-    stakeNftForLoan(nftMintAddress: string, loanAmountInSOL: number, loanInterestInSOL: number, loanDurationInSeconds: number, nftOwnerAddress: string): Promise<string>;
-    /**
-     * Cancels a loan request.
-     * @param nftMintAddress - The mint address of the NFT to cancel the loan for.
-     * @param nftOwnerAddress - The owner address of the NFT to cancel the loan for.
-     * @returns The signature of the transaction.
-     */
-    cancelLoanRequest(nftMintAddress: string, nftOwnerAddress: string): Promise<string>;
-    /**
-     * Provides loan liquidity to a borrower.
-     * @param nftMintAddress - The mint address of the NFT to provide loan liquidity for.
-     * @param borrowerAddress - The address of the borrower to provide loan liquidity to.
-     * @param lenderAddress - The address of the lender to provide loan liquidity to.
-     * @returns The signature of the transaction.
-     */
-    provideLoanLiquidity(nftMintAddress: string, borrowerAddress: string, lenderAddress: string): Promise<string>;
-    /**
-     * Repays a loan.
-     * @param nftMintAddress - The mint address of the NFT to repay the loan for.
-     * @param borrowerAddress - The address of the borrower to repay the loan for.
-     * @returns The signature of the transaction.
-     */
-    repayLoan(nftMintAddress: string, borrowerAddress: string): Promise<string>;
+    generateUnsignedLoanTransaction(loanInstructionRequest: LoanInstructionRequest): Promise<LoanTransactionResponse>;
     /**
      * Generates a memo transaction.
      * @param data - The data for the memo transaction.

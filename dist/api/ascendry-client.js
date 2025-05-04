@@ -166,6 +166,11 @@ export class AscendryClient {
         });
         return response.data;
     }
+    /**
+     * Gets the vendor listing by listing ID.
+     * @param listingId - The ID of the listing to get.
+     * @returns The vendor listing.
+     */
     async getVendorListingById(listingId) {
         const response = await axios.get(ENDPOINTS.GET_VENDOR_LISTING_BY_LISTING_ID(listingId), {
             headers: {
@@ -176,85 +181,18 @@ export class AscendryClient {
         return response.data;
     }
     /**
-     * Stakes an NFT for a loan.
-     * @param nftMintAddress - The mint address of the NFT to stake.
-     * @param loanAmountInSOL - The amount of SOL to loan.
-     * @param loanInterestInSOL - The interest rate for the loan.
-     * @param loanDurationInSeconds - The duration of the loan in seconds.
-     * @param nftOwnerAddress - The owner address of the NFT to stake.
-     * @returns The signature of the transaction.
+     * Generates an unsigned loan transaction.
+     * @param loanInstructionRequest - The loan instruction request.
+     * @returns The unsigned loan transaction.
      */
-    async stakeNftForLoan(nftMintAddress, loanAmountInSOL, loanInterestInSOL, loanDurationInSeconds, nftOwnerAddress) {
-        const response = await axios.post(ENDPOINTS.TRANSACTIONS.STAKE_NFT_FOR_LOAN, {
-            nftMintAddress,
-            loanAmountInSOL,
-            loanInterestInSOL,
-            loanDurationInSeconds,
-            nftOwnerAddress
-        }, {
+    async generateUnsignedLoanTransaction(loanInstructionRequest) {
+        const response = await axios.post(ENDPOINTS.TRANSACTIONS.GENERATE_UNSIGNED_LOAN_TRANSACTION, loanInstructionRequest, {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
             }
         });
-        console.log("API Response:", response.data);
-        return response.data.transaction;
-    }
-    /**
-     * Cancels a loan request.
-     * @param nftMintAddress - The mint address of the NFT to cancel the loan for.
-     * @param nftOwnerAddress - The owner address of the NFT to cancel the loan for.
-     * @returns The signature of the transaction.
-     */
-    async cancelLoanRequest(nftMintAddress, nftOwnerAddress) {
-        const response = await axios.post(ENDPOINTS.TRANSACTIONS.CANCEL_LOAN_REQUEST, {
-            nftMintAddress,
-            nftOwnerAddress
-        }, {
-            headers: {
-                "Content-Type": "application/json",
-                "x-api-key": this.apiKey,
-            }
-        });
-        return response.data.transaction;
-    }
-    /**
-     * Provides loan liquidity to a borrower.
-     * @param nftMintAddress - The mint address of the NFT to provide loan liquidity for.
-     * @param borrowerAddress - The address of the borrower to provide loan liquidity to.
-     * @param lenderAddress - The address of the lender to provide loan liquidity to.
-     * @returns The signature of the transaction.
-     */
-    async provideLoanLiquidity(nftMintAddress, borrowerAddress, lenderAddress) {
-        const response = await axios.post(ENDPOINTS.TRANSACTIONS.PROVIDE_LOAN_LIQUIDITY, {
-            nftMintAddress,
-            borrowerAddress,
-            lenderAddress
-        }, {
-            headers: {
-                "Content-Type": "application/json",
-                "x-api-key": this.apiKey,
-            }
-        });
-        return response.data.transaction;
-    }
-    /**
-     * Repays a loan.
-     * @param nftMintAddress - The mint address of the NFT to repay the loan for.
-     * @param borrowerAddress - The address of the borrower to repay the loan for.
-     * @returns The signature of the transaction.
-     */
-    async repayLoan(nftMintAddress, borrowerAddress) {
-        const response = await axios.post(ENDPOINTS.TRANSACTIONS.REPAY_LOAN, {
-            nftMintAddress,
-            borrowerAddress
-        }, {
-            headers: {
-                "Content-Type": "application/json",
-                "x-api-key": this.apiKey,
-            }
-        });
-        return response.data.transaction;
+        return response.data;
     }
     /**
      * Generates a memo transaction.

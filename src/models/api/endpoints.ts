@@ -44,9 +44,6 @@ export const ENDPOINTS = {
         return `${VAULT_BASE_API_URL}/cancelListing?listingId=${listingId}`;
     },
     TRANSACTIONS: {
-        STAKE_NFT_FOR_LOAN: `${VAULT_BASE_API_URL}/stakeNftForLoan`,
-        CANCEL_LOAN_REQUEST: `${VAULT_BASE_API_URL}/cancelLoanRequest`,
-        PROVIDE_LOAN_LIQUIDITY: `${VAULT_BASE_API_URL}/provideLoanLiquidity`,
-        REPAY_LOAN: `${VAULT_BASE_API_URL}/repayLoan`
+        GENERATE_UNSIGNED_LOAN_TRANSACTION: `${VAULT_BASE_API_URL}/generateUnsignedLoanTransaction`
     },
 };

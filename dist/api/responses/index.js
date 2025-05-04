@@ -7,3 +7,4 @@ export * from "./get-vendor-listings-response";
 export * from "./get-vendor-listing-by-id-response";
 export * from "./upload-vendor-listing-response";
 export * from "./cancel-vendor-listing-response";
+export * from "./loan-transaction-response";
