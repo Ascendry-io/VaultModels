@@ -22,6 +22,12 @@ The primary goals of this package are to:
 npm install vaultmodels
 ```
 
+## Dependencies
+
+This package uses:
+- TypeScript ^5.0.0
+- axios ^1.9.0
+
 ## Usage
 
 ### In Frontend (Vault-UI)
@@ -55,42 +61,50 @@ async function processNft(nft: NFTData): Promise<void> {
 ### API Models
 
 #### Requests
+- `BaseLoanInstructionRequest`
+- `CancelLoanRequest`
+- `CancelVendorListingRequest`
+- `ClaimDelinquentNftRequest`
 - `GetLoansRequest`
 - `GetNftsRequest`
 - `GetPresignedUrlForViewingRequest`
-- `GetPresignedVendorMediaFileUrlRequest`
 - `GetVendorInfoRequest`
-- `GetVendorListingsRequest`
 - `GetVendorListingByIdRequest`
+- `GetVendorListingsRequest`
+- `LoanInstructionRequest`
+- `ProvideLoanLiquidityRequest`
+- `RepayLoanRequest`
+- `StakeNftForLoanRequest`
 - `UploadVendorListingRequest`
-- `CancelVendorListingRequest`
 
 #### Responses
+- `CancelVendorListingResponse`
 - `GetLoansResponse`
 - `GetNftsResponse`
 - `GetPresignedUrlForViewingResponse`
 - `GetPresignedVendorMediaFileUrlResponse`
 - `GetVendorInfoResponse`
-- `GetVendorListingsResponse`
 - `GetVendorListingByIdResponse`
+- `GetVendorListingsResponse`
+- `LoanTransactionResponse`
 - `UploadVendorListingResponse`
-- `CancelVendorListingResponse`
 
 ### Domain Models
 
 #### NFTs
-- `NFTData`
-- `NFTMediaFile`
-- `NFTAttribute`
+- `NFTData` - Complete NFT information including metadata
+- `NftMediaFile` - Media file information for NFTs
+- `NftAttribute` - NFT attribute key-value pairs
 
 #### Loans
-- `LoanInfo`
+- `LoanInfo` - Complete loan information
+- `LoanInstructionType` - Enum for different loan instruction types
 
 #### Listings
-- `VendorListingData`
-- `VendorListingAttribute`
-- `ListingStatus`
-- `CompleteVendorListing`
+- `VendorListingData` - Base vendor listing information
+- `VendorListingAttribute` - Listing attribute key-value pairs
+- `ListingStatus` - Enum for listing states (INITIATED, CANCELLED, MINTED, BURNED)
+- `CompleteVendorListing` - Extended vendor listing with additional metadata
 
 ## Development
 
@@ -100,13 +114,16 @@ async function processNft(nft: NFTData): Promise<void> {
 npm run build
 ```
 
-This will compile the TypeScript files and generate the appropriate type definitions.
-
+This will:
+1. Clean the previous build using `npm run clean`
+2. Compile the TypeScript files using `tsc`
+3. Generate appropriate type definitions
 
 ## Versioning
 
-This package follows [Semantic Versioning](https://semver.org/). When making changes:
+This package follows [Semantic Versioning](https://semver.org/). Current version: 2.0.1
 
+When making changes:
 - Major version: Breaking changes to the API
 - Minor version: New features that are backward compatible
 - Patch version: Backward compatible bug fixes
@@ -130,4 +147,4 @@ When adding new models or modifying existing ones:
 
 ## License
 
-[Add your license information here] 
+This project is licensed under the MIT License. See the LICENSE file for details. 
