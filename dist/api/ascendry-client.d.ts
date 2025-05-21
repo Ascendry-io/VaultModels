@@ -1,5 +1,5 @@
 import { GetPresignedVendorMediaFileUrlRequest, UploadVendorListingRequest, CancelVendorListingRequest, LoanInstructionRequest } from "./requests";
-import { GetVendorInfoResponse, GetNftsResponse, GetLoansResponse, GetVendorListingsResponse, GetPresignedVendorMediaFileUrlResponse, UploadVendorListingResponse, GetVendorListingByIdResponse, CancelVendorListingResponse, GetPresignedUrlForViewingResponse, LoanTransactionResponse } from "./responses";
+import { GetVendorInfoResponse, GetNftsResponse, GetLoansResponse, GetVendorListingsResponse, GetPresignedVendorMediaFileUrlResponse, UploadVendorListingResponse, GetVendorListingByIdResponse, CancelVendorListingResponse, GetPresignedUrlForViewingResponse, LoanTransactionResponse, GetNftHistoryResponse } from "./responses";
 /**
  * This class is used to interact with the vault API.
  */
@@ -30,6 +30,7 @@ export declare class AscendryClient {
      * @returns The vault NFTs.
      */
     getVaultNftsByMint(nftMintAddress: string): Promise<GetNftsResponse>;
+    getNftHistory(nftMintAddress: string, lastEvaluatedKey: string, paginationSize: string): Promise<GetNftHistoryResponse>;
     getLoansByNftMintAddress(nftMintAddress: string): Promise<GetLoansResponse>;
     /**
      * Gets the loans for a given status.

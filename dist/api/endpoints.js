@@ -8,6 +8,10 @@ export const ENDPOINTS = {
         }
         return endpoint;
     },
+    GET_NFT_HISTORY(nftMintAddress, lastEvaluatedKey = "", paginationSize) {
+        let endpoint = `${VAULT_BASE_API_URL}/getNftHistory?nftMintAddress=${nftMintAddress}&lastEvaluatedKey=${lastEvaluatedKey}&paginationSize=${paginationSize}`;
+        return endpoint;
+    },
     GET_VAULT_NFTS_BY_MINT(nftMintAddress) {
         return `${VAULT_BASE_API_URL}/getVaultNfts?nftMintAddress=${nftMintAddress}`;
     },

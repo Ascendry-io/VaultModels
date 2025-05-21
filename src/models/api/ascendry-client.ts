@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ENDPOINTS } from './endpoints';
 import { GetPresignedVendorMediaFileUrlRequest, UploadVendorListingRequest, CancelVendorListingRequest, LoanInstructionRequest } from "./requests";
-import { GetVendorInfoResponse, GetNftsResponse, GetLoansResponse, GetVendorListingsResponse, GetPresignedVendorMediaFileUrlResponse, UploadVendorListingResponse, GetVendorListingByIdResponse, CancelVendorListingResponse, GetPresignedUrlForViewingResponse, LoanTransactionResponse } from "./responses";
+import { GetVendorInfoResponse, GetNftsResponse, GetLoansResponse, GetVendorListingsResponse, GetPresignedVendorMediaFileUrlResponse, UploadVendorListingResponse, GetVendorListingByIdResponse, CancelVendorListingResponse, GetPresignedUrlForViewingResponse, LoanTransactionResponse, GetNftHistoryResponse } from "./responses";
 /**
  * This class is used to interact with the vault API.
  */
@@ -84,6 +84,19 @@ export class AscendryClient {
             nfts: response.data.nfts,
             lastEvaluatedKey: response.data.lastEvaluatedKey
         } as GetNftsResponse;
+    }
+
+    async getNftHistory(nftMintAddress: string, lastEvaluatedKey: string, paginationSize: string): Promise<GetNftHistoryResponse> {
+        const response = await axios.get(
+            ENDPOINTS.GET_NFT_HISTORY(nftMintAddress, lastEvaluatedKey, paginationSize),
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    "x-api-key": this.apiKey,
+                }
+            }
+        );
+        return response.data as GetNftHistoryResponse;
     }
 
     async getLoansByNftMintAddress(nftMintAddress: string): Promise<GetLoansResponse> {

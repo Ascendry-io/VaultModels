@@ -8,3 +8,4 @@ export * from "./get-vendor-listing-by-id-response";
 export * from "./upload-vendor-listing-response";
 export * from "./cancel-vendor-listing-response";
 export * from "./loan-transaction-response";
+export * from "./get-nft-history-response";

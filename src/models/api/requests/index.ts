@@ -7,4 +7,5 @@ export * from "./get-vendor-listings-request";
 export * from "./get-vendor-listing-by-id-request";
 export * from "./upload-vendor-listing-request";
 export * from "./cancel-vendor-listing-request";
+export * from "./get-nft-history-request";
 export * from "./loans";

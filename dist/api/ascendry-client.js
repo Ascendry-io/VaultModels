@@ -63,6 +63,15 @@ export class AscendryClient {
             lastEvaluatedKey: response.data.lastEvaluatedKey
         };
     }
+    async getNftHistory(nftMintAddress, lastEvaluatedKey, paginationSize) {
+        const response = await axios.get(ENDPOINTS.GET_NFT_HISTORY(nftMintAddress, lastEvaluatedKey, paginationSize), {
+            headers: {
+                "Content-Type": "application/json",
+                "x-api-key": this.apiKey,
+            }
+        });
+        return response.data;
+    }
     async getLoansByNftMintAddress(nftMintAddress) {
         const response = await axios.get(ENDPOINTS.GET_LOANS_BY_NFT_MINT_ADDRESS(nftMintAddress), {
             headers: {
