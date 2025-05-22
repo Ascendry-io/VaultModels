@@ -34,8 +34,8 @@ export class AscendryClient {
      * @param paginationSize - The pagination size of the NFTs to get.
      * @returns The vault NFTs.
      */
-    async getVaultNfts(nftOwnerAddress, lastEvaluatedKey) {
-        const response = await axios.get(ENDPOINTS.GET_VAULT_NFTS(nftOwnerAddress, lastEvaluatedKey, '12'), {
+    async getVaultNfts(nftOwnerAddress, lastEvaluatedKey, paginationSize) {
+        const response = await axios.get(ENDPOINTS.GET_VAULT_NFTS(nftOwnerAddress, lastEvaluatedKey, paginationSize), {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
@@ -88,7 +88,7 @@ export class AscendryClient {
      * @param paginationSize - The pagination size of the loans to get.
      * @returns The loans.
      */
-    async getLoans(status, lastEvaluatedKey, paginationSize = 5) {
+    async getLoans(status, lastEvaluatedKey, paginationSize) {
         const response = await axios.get(ENDPOINTS.GET_LOANS(status, lastEvaluatedKey, paginationSize), {
             headers: {
                 "Content-Type": "application/json",

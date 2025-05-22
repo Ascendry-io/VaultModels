@@ -47,9 +47,10 @@ export class AscendryClient {
     async getVaultNfts(
         nftOwnerAddress: string | undefined, 
         lastEvaluatedKey: string, 
+        paginationSize?: number
     ): Promise<GetNftsResponse> {
         const response = await axios.get(
-            ENDPOINTS.GET_VAULT_NFTS(nftOwnerAddress, lastEvaluatedKey, '12'),
+            ENDPOINTS.GET_VAULT_NFTS(nftOwnerAddress, lastEvaluatedKey, paginationSize),
             {
                 headers: {
                     "Content-Type": "application/json",
@@ -86,7 +87,7 @@ export class AscendryClient {
         } as GetNftsResponse;
     }
 
-    async getNftHistory(nftMintAddress: string, lastEvaluatedKey: string, paginationSize: string): Promise<GetNftHistoryResponse> {
+    async getNftHistory(nftMintAddress: string, lastEvaluatedKey: string, paginationSize?: number): Promise<GetNftHistoryResponse> {
         const response = await axios.get(
             ENDPOINTS.GET_NFT_HISTORY(nftMintAddress, lastEvaluatedKey, paginationSize),
             {
@@ -122,7 +123,7 @@ export class AscendryClient {
     async getLoans(
         status?: string, 
         lastEvaluatedKey?: string, 
-        paginationSize: number = 5
+        paginationSize?: number
     ): Promise<GetLoansResponse> {
         const response = await axios.get(
             ENDPOINTS.GET_LOANS(status, lastEvaluatedKey, paginationSize),

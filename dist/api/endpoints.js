@@ -1,15 +1,15 @@
 const VAULT_BASE_API_URL = 'https://ycz7f841lj.execute-api.us-west-2.amazonaws.com/dev/v1';
 export const ENDPOINTS = {
     SUBMIT_TRANSACTION_TO_RPC: `${VAULT_BASE_API_URL}/submitTransactionToRpc`,
-    GET_VAULT_NFTS(nftOwnerAddress, lastEvaluatedKey = "", paginationSize) {
-        let endpoint = `${VAULT_BASE_API_URL}/getVaultNfts?lastEvaluatedKey=${lastEvaluatedKey}&paginationSize=${paginationSize}`;
+    GET_VAULT_NFTS(nftOwnerAddress, lastEvaluatedKey = "", paginationSize = 8) {
+        let endpoint = `${VAULT_BASE_API_URL}/getVaultNfts?lastEvaluatedKey=${lastEvaluatedKey}&paginationSize=${paginationSize.toString()}`;
         if (nftOwnerAddress) {
             endpoint += `&nftOwnerAddress=${nftOwnerAddress}`;
         }
         return endpoint;
     },
-    GET_NFT_HISTORY(nftMintAddress, lastEvaluatedKey = "", paginationSize) {
-        let endpoint = `${VAULT_BASE_API_URL}/getNftHistory?nftMintAddress=${nftMintAddress}&lastEvaluatedKey=${lastEvaluatedKey}&paginationSize=${paginationSize}`;
+    GET_NFT_HISTORY(nftMintAddress, lastEvaluatedKey = "", paginationSize = 5) {
+        let endpoint = `${VAULT_BASE_API_URL}/getNftHistory?nftMintAddress=${nftMintAddress}&lastEvaluatedKey=${lastEvaluatedKey}&paginationSize=${paginationSize.toString()}`;
         return endpoint;
     },
     GET_VAULT_NFTS_BY_MINT(nftMintAddress) {

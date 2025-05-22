@@ -1,7 +1,7 @@
 export declare const ENDPOINTS: {
     SUBMIT_TRANSACTION_TO_RPC: string;
-    GET_VAULT_NFTS(nftOwnerAddress: string | undefined, lastEvaluatedKey: string | undefined, paginationSize: string): string;
-    GET_NFT_HISTORY(nftMintAddress: string, lastEvaluatedKey: string | undefined, paginationSize: string): string;
+    GET_VAULT_NFTS(nftOwnerAddress: string | undefined, lastEvaluatedKey?: string, paginationSize?: number): string;
+    GET_NFT_HISTORY(nftMintAddress: string, lastEvaluatedKey?: string, paginationSize?: number): string;
     GET_VAULT_NFTS_BY_MINT(nftMintAddress: string): string;
     GET_LOANS_BY_NFT_MINT_ADDRESS(nftMintAddress: string): string;
     GET_LOANS(status?: string, lastEvaluatedKey?: string, paginationSize?: number): string;

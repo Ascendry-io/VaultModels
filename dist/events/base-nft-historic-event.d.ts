@@ -9,5 +9,4 @@ export interface BaseNftHistoricEvent {
     nftOwnerAddress: string;
     eventCategory: NftHistoricEventCategory;
     eventType: NftHistoricEventType;
-    mintTimestamp?: number;
 }

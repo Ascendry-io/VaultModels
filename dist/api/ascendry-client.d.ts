@@ -23,14 +23,14 @@ export declare class AscendryClient {
      * @param paginationSize - The pagination size of the NFTs to get.
      * @returns The vault NFTs.
      */
-    getVaultNfts(nftOwnerAddress: string | undefined, lastEvaluatedKey: string): Promise<GetNftsResponse>;
+    getVaultNfts(nftOwnerAddress: string | undefined, lastEvaluatedKey: string, paginationSize?: number): Promise<GetNftsResponse>;
     /**
      * Gets the vault NFTs for a given mint address.
      * @param nftMintAddress - The mint address of the NFTs to get.
      * @returns The vault NFTs.
      */
     getVaultNftsByMint(nftMintAddress: string): Promise<GetNftsResponse>;
-    getNftHistory(nftMintAddress: string, lastEvaluatedKey: string, paginationSize: string): Promise<GetNftHistoryResponse>;
+    getNftHistory(nftMintAddress: string, lastEvaluatedKey: string, paginationSize?: number): Promise<GetNftHistoryResponse>;
     getLoansByNftMintAddress(nftMintAddress: string): Promise<GetLoansResponse>;
     /**
      * Gets the loans for a given status.
