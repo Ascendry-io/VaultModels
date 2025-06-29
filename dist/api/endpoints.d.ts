@@ -10,11 +10,13 @@ export declare const ENDPOINTS: {
     GET_PRESIGNED_URL_FOR_VIEWING: string;
     CREATE_VENDOR_LISTING: string;
     CANCEL_VENDOR_LISTING: string;
+    SUBMIT_ASSET_REDEMPTION_REQUEST: string;
     GENERATE_MEMO_TRANSACTION: string;
     GET_VENDOR_LISTINGS(vendorAddress: string): string;
     GET_VENDOR_LISTING_BY_LISTING_ID(listingId: string): string;
     CANCEL_LISTING(listingId: string): string;
     TRANSACTIONS: {
         GENERATE_UNSIGNED_LOAN_TRANSACTION: string;
+        GENERATE_UNSIGNED_ASSET_REDEMPTION_TRANSACTION: string;
     };
 };

@@ -1,5 +1,7 @@
 import { GetPresignedVendorMediaFileUrlRequest, UploadVendorListingRequest, CancelVendorListingRequest, LoanInstructionRequest } from "./requests";
-import { GetVendorInfoResponse, GetNftsResponse, GetLoansResponse, GetVendorListingsResponse, GetPresignedVendorMediaFileUrlResponse, UploadVendorListingResponse, GetVendorListingByIdResponse, CancelVendorListingResponse, GetPresignedUrlForViewingResponse, LoanTransactionResponse, GetNftHistoryResponse } from "./responses";
+import { GetVendorInfoResponse, GetNftsResponse, GetLoansResponse, GetVendorListingsResponse, GetPresignedVendorMediaFileUrlResponse, UploadVendorListingResponse, GetVendorListingByIdResponse, CancelVendorListingResponse, GetPresignedUrlForViewingResponse, LoanTransactionResponse, GetNftHistoryResponse, AssetRedemptionTransactionResponse, SubmitAssetRedemptionResponse } from "./responses";
+import { AssetRedemptionInstructionRequest } from "./requests/asset-redemptions/asset-redemption-instruction-request";
+import { SubmitAssetRedemptionRequest } from "./requests/asset-redemptions";
 /**
  * This class is used to interact with the vault API.
  */
@@ -77,6 +79,12 @@ export declare class AscendryClient {
      */
     generateUnsignedLoanTransaction(loanInstructionRequest: LoanInstructionRequest): Promise<LoanTransactionResponse>;
     /**
+     * Generates an unsigned asset redemption transaction.
+     * @param assetRedemptionInstructionRequest - The asset redemption instruction request.
+     * @returns The unsigned asset redemption transaction.
+     */
+    generateUnsignedAssetRedemptionTransaction(assetRedemptionInstructionRequest: AssetRedemptionInstructionRequest): Promise<AssetRedemptionTransactionResponse>;
+    /**
      * Generates a memo transaction.
      * @param data - The data for the memo transaction.
      * @returns The memo transaction.
@@ -85,6 +93,12 @@ export declare class AscendryClient {
         memoMessage: string;
         signerAddress: string;
     }): Promise<string>;
+    /**
+     * Submits an asset redemption request.
+     * @param submitAssetRedemptionRequest - The submit asset redemption request.
+     * @returns The submit asset redemption response.
+     */
+    submitAssetRedemptionRequest(submitAssetRedemptionRequest: SubmitAssetRedemptionRequest): Promise<SubmitAssetRedemptionResponse>;
     cancelVendorListing(cancelVendorListingRequest: CancelVendorListingRequest): Promise<CancelVendorListingResponse>;
     getPresignedUrlForViewing(fileKey: string): Promise<GetPresignedUrlForViewingResponse>;
 }

@@ -204,6 +204,20 @@ export class AscendryClient {
         return response.data;
     }
     /**
+     * Generates an unsigned asset redemption transaction.
+     * @param assetRedemptionInstructionRequest - The asset redemption instruction request.
+     * @returns The unsigned asset redemption transaction.
+     */
+    async generateUnsignedAssetRedemptionTransaction(assetRedemptionInstructionRequest) {
+        const response = await axios.post(ENDPOINTS.TRANSACTIONS.GENERATE_UNSIGNED_ASSET_REDEMPTION_TRANSACTION, assetRedemptionInstructionRequest, {
+            headers: {
+                "Content-Type": "application/json",
+                "x-api-key": this.apiKey,
+            }
+        });
+        return response.data;
+    }
+    /**
      * Generates a memo transaction.
      * @param data - The data for the memo transaction.
      * @returns The memo transaction.
@@ -216,6 +230,20 @@ export class AscendryClient {
             }
         });
         return response.data.transaction;
+    }
+    /**
+     * Submits an asset redemption request.
+     * @param submitAssetRedemptionRequest - The submit asset redemption request.
+     * @returns The submit asset redemption response.
+     */
+    async submitAssetRedemptionRequest(submitAssetRedemptionRequest) {
+        const response = await axios.post(ENDPOINTS.SUBMIT_ASSET_REDEMPTION_REQUEST, submitAssetRedemptionRequest, {
+            headers: {
+                "Content-Type": "application/json",
+                "x-api-key": this.apiKey,
+            }
+        });
+        return response.data;
     }
     async cancelVendorListing(cancelVendorListingRequest) {
         try {

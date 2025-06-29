@@ -37,6 +37,7 @@ export const ENDPOINTS = {
     GET_PRESIGNED_URL_FOR_VIEWING: `${VAULT_BASE_API_URL}/getPresignedUrlForViewing`,
     CREATE_VENDOR_LISTING: `${VAULT_BASE_API_URL}/createVendorListing`,
     CANCEL_VENDOR_LISTING: `${VAULT_BASE_API_URL}/cancelVendorListing`,
+    SUBMIT_ASSET_REDEMPTION_REQUEST: `${VAULT_BASE_API_URL}/submitAssetRedemptionRequest`,
     GENERATE_MEMO_TRANSACTION: `${VAULT_BASE_API_URL}/generateMemoTransaction`,
     GET_VENDOR_LISTINGS(vendorAddress: string) {
         return `${VAULT_BASE_API_URL}/getVendorListings?vendorAddress=${vendorAddress}`;
@@ -48,6 +49,7 @@ export const ENDPOINTS = {
         return `${VAULT_BASE_API_URL}/cancelListing?listingId=${listingId}`;
     },
     TRANSACTIONS: {
-        GENERATE_UNSIGNED_LOAN_TRANSACTION: `${VAULT_BASE_API_URL}/generateUnsignedLoanTransaction`
+        GENERATE_UNSIGNED_LOAN_TRANSACTION: `${VAULT_BASE_API_URL}/generateUnsignedLoanTransaction`,
+        GENERATE_UNSIGNED_ASSET_REDEMPTION_TRANSACTION: `${VAULT_BASE_API_URL}/generateUnsignedAssetRedemptionTransaction`,
     },
 };
