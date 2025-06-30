@@ -11,3 +11,4 @@ export * from "./loan-transaction-response";
 export * from "./get-nft-history-response";
 export * from "./asset-redemption-transaction-response";
 export * from "./submit-asset-redemption-response";
+export * from "./get-asset-redemption-info-response";

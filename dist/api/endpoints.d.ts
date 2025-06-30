@@ -5,6 +5,7 @@ export declare const ENDPOINTS: {
     GET_VAULT_NFTS_BY_MINT(nftMintAddress: string): string;
     GET_LOANS_BY_NFT_MINT_ADDRESS(nftMintAddress: string): string;
     GET_LOANS(status?: string, lastEvaluatedKey?: string, paginationSize?: number): string;
+    GET_ASSET_REDEMPTION_INFO(nftMintAddress: string): string;
     GET_VENDOR_INFO(vendorAddress: string): string;
     GET_PRESIGNED_URL: string;
     GET_PRESIGNED_URL_FOR_VIEWING: string;

@@ -11,3 +11,4 @@ export * from "./get-nft-history-request";
 export * from "./loans";
 export * from "./asset-redemptions";
 export * from "./get-network-metrics-request";
+export * from "./get-asset-redemption-info-request";

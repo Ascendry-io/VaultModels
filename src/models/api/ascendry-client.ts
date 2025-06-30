@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ENDPOINTS } from './endpoints';
 import { GetPresignedVendorMediaFileUrlRequest, UploadVendorListingRequest, CancelVendorListingRequest, LoanInstructionRequest } from "./requests";
-import { GetVendorInfoResponse, GetNftsResponse, GetLoansResponse, GetVendorListingsResponse, GetPresignedVendorMediaFileUrlResponse, UploadVendorListingResponse, GetVendorListingByIdResponse, CancelVendorListingResponse, GetPresignedUrlForViewingResponse, LoanTransactionResponse, GetNftHistoryResponse, AssetRedemptionTransactionResponse, SubmitAssetRedemptionResponse } from "./responses";
+import { GetVendorInfoResponse, GetNftsResponse, GetLoansResponse, GetVendorListingsResponse, GetPresignedVendorMediaFileUrlResponse, UploadVendorListingResponse, GetVendorListingByIdResponse, CancelVendorListingResponse, GetPresignedUrlForViewingResponse, LoanTransactionResponse, GetNftHistoryResponse, AssetRedemptionTransactionResponse, SubmitAssetRedemptionResponse, GetAssetRedemptionInfoResponse } from "./responses";
 import { AssetRedemptionInstructionRequest } from "./requests/asset-redemptions/asset-redemption-instruction-request";
 import { SubmitAssetRedemptionRequest } from "./requests/asset-redemptions";
 /**
@@ -137,6 +137,19 @@ export class AscendryClient {
             }
         );
         return response.data as GetLoansResponse;
+    }
+
+    async getAssetRedemptionInfo(nftMintAddress: string): Promise<GetAssetRedemptionInfoResponse> {
+        const response = await axios.get(
+            ENDPOINTS.GET_ASSET_REDEMPTION_INFO(nftMintAddress),
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    "x-api-key": this.apiKey,
+                }
+            }
+        );
+        return response.data as GetAssetRedemptionInfoResponse;
     }
 
     /**

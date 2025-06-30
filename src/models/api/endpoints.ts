@@ -30,6 +30,9 @@ export const ENDPOINTS = {
         const queryString = params.toString();
         return queryString ? `${endpoint}?${queryString}` : endpoint;
     },
+    GET_ASSET_REDEMPTION_INFO(nftMintAddress: string) {
+        return `${VAULT_BASE_API_URL}/getAssetRedemptionInfo?nftMintAddress=${nftMintAddress}`;
+    },
     GET_VENDOR_INFO(vendorAddress: string) {
         return `${VAULT_BASE_API_URL}/getVendorInfo?vendorAddress=${vendorAddress}`;
     },

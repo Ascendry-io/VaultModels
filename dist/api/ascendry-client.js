@@ -97,6 +97,15 @@ export class AscendryClient {
         });
         return response.data;
     }
+    async getAssetRedemptionInfo(nftMintAddress) {
+        const response = await axios.get(ENDPOINTS.GET_ASSET_REDEMPTION_INFO(nftMintAddress), {
+            headers: {
+                "Content-Type": "application/json",
+                "x-api-key": this.apiKey,
+            }
+        });
+        return response.data;
+    }
     /**
      * Gets the vendor info for a given vendor address.
      * @param vendorAddress - The address of the vendor to get.

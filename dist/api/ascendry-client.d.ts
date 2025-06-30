@@ -1,5 +1,5 @@
 import { GetPresignedVendorMediaFileUrlRequest, UploadVendorListingRequest, CancelVendorListingRequest, LoanInstructionRequest } from "./requests";
-import { GetVendorInfoResponse, GetNftsResponse, GetLoansResponse, GetVendorListingsResponse, GetPresignedVendorMediaFileUrlResponse, UploadVendorListingResponse, GetVendorListingByIdResponse, CancelVendorListingResponse, GetPresignedUrlForViewingResponse, LoanTransactionResponse, GetNftHistoryResponse, AssetRedemptionTransactionResponse, SubmitAssetRedemptionResponse } from "./responses";
+import { GetVendorInfoResponse, GetNftsResponse, GetLoansResponse, GetVendorListingsResponse, GetPresignedVendorMediaFileUrlResponse, UploadVendorListingResponse, GetVendorListingByIdResponse, CancelVendorListingResponse, GetPresignedUrlForViewingResponse, LoanTransactionResponse, GetNftHistoryResponse, AssetRedemptionTransactionResponse, SubmitAssetRedemptionResponse, GetAssetRedemptionInfoResponse } from "./responses";
 import { AssetRedemptionInstructionRequest } from "./requests/asset-redemptions/asset-redemption-instruction-request";
 import { SubmitAssetRedemptionRequest } from "./requests/asset-redemptions";
 /**
@@ -42,6 +42,7 @@ export declare class AscendryClient {
      * @returns The loans.
      */
     getLoans(status?: string, lastEvaluatedKey?: string, paginationSize?: number): Promise<GetLoansResponse>;
+    getAssetRedemptionInfo(nftMintAddress: string): Promise<GetAssetRedemptionInfoResponse>;
     /**
      * Gets the vendor info for a given vendor address.
      * @param vendorAddress - The address of the vendor to get.
