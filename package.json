@@ -1,7 +1,7 @@
 {
   "name": "vaultmodels",
-  "version": "2.0.1",
-  "description": "Shared TypeScript models for my RWA app",
+  "version": "2.0.2",
+  "description": "This repository contains the shared Typescript models for interacting with Ascendry.io API.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
