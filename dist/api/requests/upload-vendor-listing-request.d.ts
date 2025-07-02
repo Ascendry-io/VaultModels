@@ -1,4 +1,4 @@
-import { VendorListingData } from "../../listings/vendor-listing-data";
+import { VendorListingData } from "../../models/listings/vendor-listing-data";
 /**
  * Represents a upload vendor listing request object.
  */

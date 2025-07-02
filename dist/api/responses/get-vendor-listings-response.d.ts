@@ -1,4 +1,4 @@
-import { CompleteVendorListing } from "../../listings/complete-vendor-listing";
+import { CompleteVendorListing } from "../../models/listings/complete-vendor-listing";
 /**
  * Represents a response from the vendor listings API.
  */

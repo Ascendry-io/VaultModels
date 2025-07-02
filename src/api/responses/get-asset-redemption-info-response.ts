@@ -1,4 +1,4 @@
-import { AssetRedemptionFormData } from "../../asset-redemptions/asset-redemption-form-data";
+import { AssetRedemptionFormData } from "../../models/asset-redemptions/asset-redemption-form-data";
 
 /**
  * Response model for getting asset redemption info.

@@ -1,4 +1,4 @@
-import { BaseNftHistoricEvent } from "../../events";
+import { BaseNftHistoricEvent } from "../../models/events";
 /**
  * Represents a get NFT history response object.
  */

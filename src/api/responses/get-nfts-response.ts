@@ -1,4 +1,4 @@
-import { NFTData } from "../../nfts";
+import { NFTData } from "../../models/nfts";
 
 /**
  * Represents a get NFTs response object.

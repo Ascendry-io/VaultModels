@@ -1,4 +1,4 @@
-import { LoanInfo } from "../../loans/loan-info";
+import { LoanInfo } from "../../models/loans/loan-info";
 /**
  * Represents a get loans response object.
  */

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ENDPOINTS } from './endpoints';
+import { ENDPOINTS } from './api/endpoints';
 /**
  * This class is used to interact with the vault API.
  */
