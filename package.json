@@ -1,6 +1,9 @@
 {
   "name": "@ascendry/sdk",
-  "version": "1.0.0",
+  "version": "1.0.2",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "SDK for the Ascendry API (https://ascendry.io/)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

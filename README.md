@@ -24,7 +24,7 @@ The primary goals of this package are to:
 ## Installation
 
 ```bash
-npm install ascendry-sdk
+npm install @ascendry/sdk
 ```
 
 ## Dependencies
@@ -38,7 +38,7 @@ This package uses:
 ### API Client
 
 ```typescript
-import { AscendryClient } from 'ascendry-sdk';
+import { AscendryClient } from '@ascendry/sdk';
 
 // Initialize the client with your API key
 const client = new AscendryClient('your-api-key');
@@ -74,7 +74,7 @@ import {
   GetNftsResponse,
   LoanInstructionRequest,
   AssetRedemptionInstructionRequest
-} from 'ascendry-sdk';
+} from '@ascendry/sdk';
 
 // Use the types in your components
 const nft: NFTData = {
@@ -213,10 +213,6 @@ This will:
 - `npm run build` - Build the package
 - `npm run clean` - Clean the dist directory
 - `npm run prepare` - Clean and build (runs automatically on npm install)
-
-## Versioning
-
-This package follows [Semantic Versioning](https://semver.org/). Current version: 3.0.0
 
 When making changes:
 - **Major version**: Breaking changes to the API or client interface
