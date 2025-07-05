@@ -1,18 +1,21 @@
 {
-  "name": "ascendry-sdk",
-  "version": "3.0.0",
-  "description": "This repository contains the shared Typescript models for interacting with Ascendry.io API.",
+  "name": "@ascendry/sdk",
+  "version": "1.0.0",
+  "description": "SDK for the Ascendry API (https://ascendry.io/)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist",
-    "prepare": "npm run clean && npm run build"
+    "prepare": "npm run clean && npm run build",
+    "format": "prettier --write 'src/**/*.{js,ts,json,md}'"
   },
   "keywords": [
     "typescript",
     "models",
-    "ascendry"
+    "ascendry",
+    "api",
+    "sdk"
   ],
   "author": "Rastaar Haghi",
   "license": "MIT",
@@ -20,7 +23,8 @@
     "dist"
   ],
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "prettier": "^3.3.2"
   },
   "dependencies": {
     "axios": "^1.9.0"

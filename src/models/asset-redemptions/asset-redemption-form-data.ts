@@ -11,4 +11,4 @@ export interface AssetRedemptionFormData {
   city: string;
   state: string;
   zip: string;
-};
+}

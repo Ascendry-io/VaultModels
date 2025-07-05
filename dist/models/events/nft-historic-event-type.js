@@ -11,4 +11,3 @@ export var NftHistoricEventType;
     NftHistoricEventType["NFT_MINTED"] = "NFT_MINTED";
     NftHistoricEventType["NFT_TRANSFERRED"] = "NFT_TRANSFERRED";
 })(NftHistoricEventType || (NftHistoricEventType = {}));
-;

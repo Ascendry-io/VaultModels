@@ -8,4 +8,3 @@ export var ListingStatus;
     ListingStatus["MINTED"] = "MINTED";
     ListingStatus["BURNED"] = "BURNED";
 })(ListingStatus || (ListingStatus = {}));
-;

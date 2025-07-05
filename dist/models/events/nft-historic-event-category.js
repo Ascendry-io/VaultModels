@@ -6,4 +6,3 @@ export var NftHistoricEventCategory;
     NftHistoricEventCategory["LOAN_EVENTS"] = "LOAN_EVENTS";
     NftHistoricEventCategory["NFT_EVENTS"] = "NFT_EVENTS";
 })(NftHistoricEventCategory || (NftHistoricEventCategory = {}));
-;

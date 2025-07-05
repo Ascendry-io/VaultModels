@@ -8,4 +8,4 @@ export interface GetAssetRedemptionInfoResponse {
   isFulfilled: boolean;
   requestTimestamp: number;
   assetRedemptionFormData?: AssetRedemptionFormData;
-};
+}

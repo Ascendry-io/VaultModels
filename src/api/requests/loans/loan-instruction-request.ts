@@ -7,4 +7,9 @@ import { StakeNftForLoanRequest } from "./stake-nft-for-loan-request";
 /**
  * The request to create a loan.
  */
-export type LoanInstructionRequest = StakeNftForLoanRequest | CancelLoanRequest | ProvideLoanLiquidityRequest | RepayLoanRequest | ClaimDelinquentNftRequest;
+export type LoanInstructionRequest =
+  | StakeNftForLoanRequest
+  | CancelLoanRequest
+  | ProvideLoanLiquidityRequest
+  | RepayLoanRequest
+  | ClaimDelinquentNftRequest;

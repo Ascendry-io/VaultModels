@@ -5,4 +5,4 @@ export interface BaseAssetRedemptionInstructionRequest {
   nftMintAddress: string;
   nftOwnerAddress: string;
   assetRedemptionInstructionType: string;
-};
+}

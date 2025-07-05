@@ -3,4 +3,4 @@
  */
 export interface GetAssetRedemptionInfoRequest {
   nftMintAddress: string;
-};
+}

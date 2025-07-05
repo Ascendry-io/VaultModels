@@ -5,9 +5,9 @@ import { VendorListingData } from "./vendor-listing-data";
  * Represents a complete vendor listing object.
  */
 export interface CompleteVendorListing extends VendorListingData {
-    listingId: string;
-    createdAtTimestamp: number;
-    status: ListingStatus;
-    memoTransactionSignature: string;
-    nftMint?: string; // Only populates for listings with a ListingStatus of "MINTED"
-};
+  listingId: string;
+  createdAtTimestamp: number;
+  status: ListingStatus;
+  memoTransactionSignature: string;
+  nftMint?: string; // Only populates for listings with a ListingStatus of "MINTED"
+}

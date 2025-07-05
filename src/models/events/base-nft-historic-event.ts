@@ -5,9 +5,9 @@ import { NftHistoricEventType } from "./nft-historic-event-type";
  * Represents a NFT historic event.
  */
 export interface BaseNftHistoricEvent {
-    nftMintAddress: string;
-    lastUpdatedTimestamp: number;
-    nftOwnerAddress: string;
-    eventCategory: NftHistoricEventCategory;
-    eventType: NftHistoricEventType;
-};
+  nftMintAddress: string;
+  lastUpdatedTimestamp: number;
+  nftOwnerAddress: string;
+  eventCategory: NftHistoricEventCategory;
+  eventType: NftHistoricEventType;
+}

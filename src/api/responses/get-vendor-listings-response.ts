@@ -4,6 +4,6 @@ import { CompleteVendorListing } from "../../models/listings/complete-vendor-lis
  * Represents a response from the vendor listings API.
  */
 export interface GetVendorListingsResponse {
-    listings: CompleteVendorListing[];
-    lastEvaluatedKey?: string;
-};
+  listings: CompleteVendorListing[];
+  lastEvaluatedKey?: string;
+}

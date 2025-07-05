@@ -3,4 +3,5 @@ import { BaseAssetRedemptionInstructionRequest } from "./base-asset-redemption-i
 /**
  * Request to create an asset redemption.
  */
-export interface CreateAssetRedemptionInstructionRequest extends BaseAssetRedemptionInstructionRequest {};
+export interface CreateAssetRedemptionInstructionRequest
+  extends BaseAssetRedemptionInstructionRequest {}

@@ -1,4 +1,4 @@
-const VAULT_BASE_API_URL = 'https://ycz7f841lj.execute-api.us-west-2.amazonaws.com/dev/v1';
+const VAULT_BASE_API_URL = "https://ycz7f841lj.execute-api.us-west-2.amazonaws.com/dev/v1";
 export const ENDPOINTS = {
     SUBMIT_TRANSACTION_TO_RPC: `${VAULT_BASE_API_URL}/submitTransactionToRpc`,
     GET_VAULT_NFTS(nftOwnerAddress, lastEvaluatedKey = "", paginationSize = 8) {
@@ -22,10 +22,10 @@ export const ENDPOINTS = {
         let endpoint = `${VAULT_BASE_API_URL}/getLoans`;
         const params = new URLSearchParams();
         if (status)
-            params.append('status', status);
+            params.append("status", status);
         if (lastEvaluatedKey)
-            params.append('lastEvaluatedKey', lastEvaluatedKey);
-        params.append('paginationSize', paginationSize.toString());
+            params.append("lastEvaluatedKey", lastEvaluatedKey);
+        params.append("paginationSize", paginationSize.toString());
         const queryString = params.toString();
         return queryString ? `${endpoint}?${queryString}` : endpoint;
     },

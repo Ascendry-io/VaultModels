@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ENDPOINTS } from './api/endpoints';
+import { ENDPOINTS } from "./api/endpoints";
 /**
  * This class is used to interact with the vault API.
  */
@@ -22,7 +22,7 @@ export class AscendryClient {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
-            }
+            },
         });
         console.log("API Response:", rpcResponse.data);
         return rpcResponse.data.signature;
@@ -39,11 +39,11 @@ export class AscendryClient {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
-            }
+            },
         });
         return {
             nfts: response.data.nfts,
-            lastEvaluatedKey: response.data.lastEvaluatedKey
+            lastEvaluatedKey: response.data.lastEvaluatedKey,
         };
     }
     /**
@@ -56,11 +56,11 @@ export class AscendryClient {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
-            }
+            },
         });
         return {
             nfts: response.data.nfts,
-            lastEvaluatedKey: response.data.lastEvaluatedKey
+            lastEvaluatedKey: response.data.lastEvaluatedKey,
         };
     }
     async getNftHistory(nftMintAddress, lastEvaluatedKey, paginationSize) {
@@ -68,7 +68,7 @@ export class AscendryClient {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
-            }
+            },
         });
         return response.data;
     }
@@ -77,7 +77,7 @@ export class AscendryClient {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
-            }
+            },
         });
         return response.data;
     }
@@ -93,7 +93,7 @@ export class AscendryClient {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
-            }
+            },
         });
         return response.data;
     }
@@ -102,7 +102,7 @@ export class AscendryClient {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
-            }
+            },
         });
         return response.data;
     }
@@ -117,16 +117,16 @@ export class AscendryClient {
                 headers: {
                     "Content-Type": "application/json",
                     "x-api-key": this.apiKey,
-                }
+                },
             });
             return response.data;
         }
         catch (error) {
             // Return empty response when the vendor is not found or not authorized
             return {
-                vendorAddress: '',
-                vendorName: '',
-                createdAt: 0
+                vendorAddress: "",
+                vendorName: "",
+                createdAt: 0,
             };
         }
     }
@@ -141,12 +141,12 @@ export class AscendryClient {
                 headers: {
                     "Content-Type": "application/json",
                     "x-api-key": this.apiKey,
-                }
+                },
             });
             return response.data;
         }
         catch (error) {
-            console.error('Failed to get presigned URL:', error);
+            console.error("Failed to get presigned URL:", error);
             throw error;
         }
     }
@@ -161,12 +161,12 @@ export class AscendryClient {
                 headers: {
                     "Content-Type": "application/json",
                     "x-api-key": this.apiKey,
-                }
+                },
             });
             return response.data;
         }
         catch (error) {
-            console.error('Failed to create listing:', error);
+            console.error("Failed to create listing:", error);
             throw error;
         }
     }
@@ -180,7 +180,7 @@ export class AscendryClient {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
-            }
+            },
         });
         return response.data;
     }
@@ -194,7 +194,7 @@ export class AscendryClient {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
-            }
+            },
         });
         return response.data;
     }
@@ -208,7 +208,7 @@ export class AscendryClient {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
-            }
+            },
         });
         return response.data;
     }
@@ -222,7 +222,7 @@ export class AscendryClient {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
-            }
+            },
         });
         return response.data;
     }
@@ -236,7 +236,7 @@ export class AscendryClient {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
-            }
+            },
         });
         return response.data.transaction;
     }
@@ -250,7 +250,7 @@ export class AscendryClient {
             headers: {
                 "Content-Type": "application/json",
                 "x-api-key": this.apiKey,
-            }
+            },
         });
         return response.data;
     }
@@ -260,12 +260,12 @@ export class AscendryClient {
                 headers: {
                     "Content-Type": "application/json",
                     "x-api-key": this.apiKey,
-                }
+                },
             });
             return response.data;
         }
         catch (error) {
-            console.error('Failed to cancel listing:', error);
+            console.error("Failed to cancel listing:", error);
             throw error;
         }
     }
@@ -276,13 +276,13 @@ export class AscendryClient {
                 headers: {
                     "Content-Type": "application/json",
                     "x-api-key": this.apiKey,
-                }
+                },
             });
-            console.log('response.data', response.data);
+            console.log("response.data", response.data);
             return response.data;
         }
         catch (error) {
-            console.error('Failed to get presigned URL for viewing:', error);
+            console.error("Failed to get presigned URL for viewing:", error);
             throw error;
         }
     }
